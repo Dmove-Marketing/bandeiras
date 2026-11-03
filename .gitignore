@@ -19,3 +19,7 @@ npm-debug.log*
 
 # artefatos de conversão (scaffold greenfield)
 _work/
+
+# Cloudflare
+.wrangler/
+.dev.vars*

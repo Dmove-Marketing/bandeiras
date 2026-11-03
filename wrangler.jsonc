@@ -1,0 +1,9 @@
+{
+  // Site estático (Astro): a Cloudflare serve o conteúdo de ./dist, sem Worker.
+  // O "name" precisa ser igual ao nome do Worker criado no painel da Cloudflare.
+  "name": "bandeiras",
+  "compatibility_date": "2026-11-03",
+  "assets": {
+    "directory": "./dist"
+  }
+}
