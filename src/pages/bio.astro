@@ -1,0 +1,102 @@
+---
+// BIO do Instagram: redes em ícones, mapa e formulário padrão numa única seção
+// (preset corporativo: empresa sempre visível, só tipos de evento corporativos).
+import Base from '../layouts/Base.astro';
+import Rodape from '../components/Rodape.astro';
+import LeadForm from '../components/form/LeadForm.astro';
+import { tipoEventoOptionsCorporativo } from '../scripts/form-presets';
+import '../styles/bandeiras-base.css';
+import '../styles/form.css';
+
+const CDN = 'https://media.dmove.com.br/clients/bandeiras/photos';
+const endereco = 'Av. Ireno da Silva Venâncio, 199 - Protestantes, Votorantim - SP, 18111-100';
+const mapa = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco)}`;
+
+const redes = [
+  { nome: 'Instagram', href: 'https://www.instagram.com/bandeirasempresarial/', icone: 'instagram' },
+  { nome: 'YouTube', href: 'https://www.youtube.com/@bandeirasempresarial/videos', icone: 'youtube' },
+  { nome: 'LinkedIn', href: 'https://www.linkedin.com/company/bandeirasempresarial/', icone: 'linkedin' },
+  { nome: 'TikTok', href: 'https://www.tiktok.com/@bandeiras.empresarial', icone: 'tiktok' },
+];
+---
+
+<Base
+  title="Bio | Bandeiras Empresarial"
+  description="Realize seu evento no Bandeiras Empresarial, um ecossistema que conecta empresas, pessoas e experiências. Redes sociais, localização e solicitação de orçamento."
+  ogImage={`${CDN}/bandeiras-corporativo-hero-fachada.webp`}
+  canonical="https://eventos.bandeirasempresarial.com.br/bio/"
+  whatsAppShowEmpresaField={true}
+  whatsAppTipoOptions={tipoEventoOptionsCorporativo}
+>
+<Fragment slot="head">
+  <link rel="preload" href="/fonts/Nexa-Heavy.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500;700&display=swap" />
+</Fragment>
+
+<main class="bio">
+  <div class="bio__midia">
+    <img src={`${CDN}/bandeiras-corporativo-hero-fachada.webp`} width="1920" height="1080" alt="Fachada do Bandeiras Empresarial ao entardecer, em Votorantim" fetchpriority="high" decoding="async" />
+  </div>
+  <div class="bio__conteudo">
+    <img class="bio__logo" src={`${CDN}/bandeiras-corporativo-logo-bandeiras-branco.webp`} width="720" height="107" alt="Bandeiras Empresarial" />
+    <p class="bio__texto">Realize seu evento no Bandeiras Empresarial, um ecossistema que conecta empresas, pessoas e experiências.</p>
+    <span class="filete" aria-hidden="true"></span>
+
+    <ul class="bio__redes">
+      {redes.map((r) => (
+        <li>
+          <a class="bio__rede" href={r.href} target="_blank" rel="noopener" aria-label={r.nome} title={r.nome}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              {r.icone === 'instagram' && (<><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".6" fill="currentColor" /></>)}
+              {r.icone === 'youtube' && (<><rect x="2" y="5" width="20" height="14" rx="4" /><path d="m10 9 5 3-5 3z" fill="currentColor" /></>)}
+              {r.icone === 'linkedin' && (<><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M8 11v5M8 8v.01M12 16v-5m0 2a2.5 2.5 0 0 1 5 0v3" /></>)}
+              {r.icone === 'tiktok' && <path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5M14 4c.3 2.3 1.8 3.8 4 4" />}
+            </svg>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a class="bio__link" href={mapa} target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" />
+      </svg>
+      <span class="bio__link-texto">
+        <strong>Como chegar</strong>
+        <small>{endereco}</small>
+      </span>
+    </a>
+
+    <div class="bio__form" id="contato">
+      <h2 class="titulo">Solicite um <span class="fecho">orçamento</span></h2>
+      <LeadForm id="form-bio" tipos={tipoEventoOptionsCorporativo} />
+    </div>
+  </div>
+</main>
+<Rodape />
+</Base>
+
+<style>
+  .bio { position: relative; display: grid; justify-items: center; align-content: start; min-height: 100svh; padding: max(40px, env(safe-area-inset-top, 0px)) var(--gutter) max(48px, env(safe-area-inset-bottom, 0px)); color: var(--cor-texto-claro); background: var(--cor-grafite); overflow: hidden; isolation: isolate; }
+  .bio__midia { position: absolute; inset: 0; z-index: -1; }
+  .bio__midia img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+  .bio__midia::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,16,14,.6) 0%, rgba(18,16,14,.62) 40%, rgba(18,16,14,.9) 100%); }
+  .bio__conteudo { display: grid; justify-items: center; gap: 24px; width: 100%; max-width: 520px; text-align: center; }
+  .bio__logo { width: 190px; height: auto; }
+  .bio__texto { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); line-height: 1.55; color: var(--cor-texto-claro); text-wrap: balance; }
+  .bio__redes { display: flex; justify-content: center; gap: 14px; }
+  .bio__rede { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; border: 1.5px solid rgba(246,242,236,.55); background: rgba(18,16,14,.35); backdrop-filter: blur(4px); transition: background-color .3s var(--ease), border-color .3s var(--ease); }
+  .bio__rede:hover, .bio__rede:focus-visible { background: var(--cor-terracota); border-color: var(--cor-terracota); }
+  .bio__rede svg { width: 24px; height: 24px; }
+  .bio__link { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 60px; padding: 14px 20px; border: 1.5px solid rgba(246,242,236,.55); background: rgba(18,16,14,.35); backdrop-filter: blur(4px); text-align: left; transition: background-color .3s var(--ease), border-color .3s var(--ease); }
+  .bio__link:hover, .bio__link:focus-visible { background: var(--cor-terracota); border-color: var(--cor-terracota); }
+  .bio__link svg { flex: none; width: 24px; height: 24px; }
+  .bio__link-texto { display: grid; gap: 2px; }
+  .bio__link strong { font-family: var(--fonte-titulo); font-weight: 900; font-size: .85rem; letter-spacing: .09em; text-transform: uppercase; }
+  .bio__link small { font-size: .78rem; line-height: 1.35; color: var(--cor-texto-claro-suave); }
+  .bio__form { display: grid; gap: 24px; width: 100%; margin-top: 12px; padding: clamp(24px, 5vw, 40px); background: var(--cor-bone); color: var(--cor-texto); text-align: left; }
+  .bio__form .titulo { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem); }
+  .bio__form .fecho { color: var(--cor-terracota); }
+</style>

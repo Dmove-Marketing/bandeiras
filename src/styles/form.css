@@ -1,0 +1,16 @@
+/* Formulário padrão Dmove no visual Bandeiras (.campo, .btn) — usado em /eventos-corporativos e /bio */
+.form-captacao{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
+.campo{display:grid;gap:8px;min-width:0;align-content:start}
+.campo[hidden]{display:none}
+.campo--inteiro{grid-column:1 / -1}
+.campo label{font-family:var(--fonte-dados);font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cor-texto)}
+.campo label span{color:var(--cor-terracota)}
+.campo label small{font-size:inherit;letter-spacing:inherit;color:var(--cor-texto-suave)}
+.campo input,.campo textarea,.campo select{width:100%;min-height:52px;padding:14px;border:1px solid var(--cor-cinza);border-radius:0;background:#fff;color:var(--cor-texto);font:inherit;font-size:1rem;line-height:1.3;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.campo select{padding-right:42px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%232C2C2C' stroke-width='1.6'%3E%3Cpath d='m1 1 5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;cursor:pointer;text-overflow:ellipsis}
+.campo textarea{min-height:120px;resize:vertical}
+.campo input:focus,.campo textarea:focus,.campo select:focus{outline:none;border-color:var(--cor-grafite);box-shadow:0 0 0 3px rgba(166,58,20,.18)}
+.form-captacao .btn{grid-column:1 / -1;width:100%;min-height:58px;font-size:.85rem;margin-top:4px}
+.form-captacao .btn:disabled{opacity:.7;cursor:progress}
+@media (max-width:640px){.form-captacao{grid-template-columns:1fr}}
+.flatpickr-calendar{font-family:var(--fonte-texto)}

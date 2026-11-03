@@ -1,0 +1,8 @@
+/* Rodapé padrão Bandeiras (componente Rodape.astro) */
+.rodape{background:var(--cor-grafite-fundo);color:var(--cor-texto-claro);padding-block:clamp(64px,8vw,104px) max(28px,env(safe-area-inset-bottom,0px))}
+.rodape__marca{display:flex;justify-content:center;padding-bottom:clamp(48px,6vw,72px);border-bottom:1px solid var(--cor-linha-clara)}
+.rodape__marca img{width:clamp(180px,20vw,260px)}
+.rodape__base{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;padding-top:24px;font-family:var(--fonte-dados);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;color:var(--cor-texto-claro-suave)}
+.rodape__dev{display:flex;align-items:center;justify-content:center;gap:12px;padding-top:20px;font-family:var(--fonte-dados);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cor-texto-claro-suave)}
+.rodape__dev img{width:88px;height:auto}
+@media (max-width:719px){.rodape__base{padding-inline:64px}}

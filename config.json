@@ -1,40 +1,38 @@
 {
-  "project_name": "PREENCHER — Nome do projeto",
-  "project_slug": "preencher-slug",
-  "domain": "eventos.cliente.com.br",
-  "client": "PREENCHER — Cliente",
-  "environment": "development",
+  "project_name": "Bandeiras Empresarial",
+  "project_slug": "bandeiras",
+  "domain": "eventos.bandeirasempresarial.com.br",
+  "client": "Bandeiras Empresarial",
+  "environment": "production",
   "tracking": {
-    "gtm_id": "GTM-XXXXXXX",
+    "gtm_id": "",
     "enabled": true
   },
   "whatsapp": {
-    "phone": "5511900000000",
-    "display_name": "PREENCHER — Cliente",
-    "avatar": "/images/whatsapp-avatar.jpg",
+    "phone": "5517997546177",
+    "display_name": "Bandeiras Empresarial",
+    "avatar": "/images/icone.png",
     "enabled": true
   },
   "forms": {
     "lead-form": {
       "id": "lead-form",
-      "preset": "social",
+      "preset": "corporativo",
       "redirect_on_success": "",
       "webhooks": [
-        "https://server3n8n.dmove.com.br/webhook/preencher-slug"
+        "https://server3n8n.dmove.com.br/webhook/bandeiras"
       ]
     }
   },
   "media": {
-    "cdn_base": "https://media.dmove.com.br/clients/preencher-slug"
+    "cdn_base": "https://media.dmove.com.br/clients/bandeiras"
   },
   "deploy": {
-    "user": "root",
-    "server": "157.173.197.116",
-    "remote_path": "/var/www/eventos.cliente.com.br"
+    "provider": "cloudflare"
   },
   "meta": {
-    "created_at": "",
-    "last_updated": "",
+    "created_at": "2026-11-03",
+    "last_updated": "2026-11-03",
     "owner": "Dmove"
   }
 }

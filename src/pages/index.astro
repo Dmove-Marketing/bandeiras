@@ -1,18 +1,64 @@
 ---
-// Página placeholder do template. Substitua pelo conteúdo do projeto.
-// Fluxo completo: veja CLAUDE.md.
+// Hub: quem acessa a raiz (sem slug) escolhe a página do evento. Para incluir uma nova página, adicione um item em `paginas`.
 import Base from '../layouts/Base.astro';
+import Rodape from '../components/Rodape.astro';
+import '../styles/bandeiras-base.css';
+
+const CDN = 'https://media.dmove.com.br/clients/bandeiras/photos';
+
+const paginas = [
+  { titulo: 'Eventos corporativos', texto: 'Auditório, salas de treinamento, Espaço Motor, Arena e Pista de Drift.', href: '/eventos-corporativos/' },
+];
 ---
 
-<Base title="Dmove — Template de Landing Page" noIndex={true}>
-  <main style="min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;font-family:system-ui,sans-serif;">
-    <div style="max-width:640px;">
-      <h1 style="font-size:2rem;margin-bottom:16px;">dmove-astro-template</h1>
-      <p style="opacity:.75;line-height:1.6;">
-        Clone deste modelo pronto. Para iniciar um projeto, siga o
-        <strong>CLAUDE.md</strong>: responda o onboarding, informe onde está o HTML
-        recebido do time (Claude Design) e a pasta de destino, e a implementação segue as Fases 1–7.
-      </p>
-    </div>
-  </main>
+<Base
+  title="Bandeiras Empresarial | Eventos em Votorantim"
+  description="Bandeiras Empresarial: um ecossistema que conecta empresas, pessoas e experiências em Votorantim, região de Sorocaba. Escolha o tipo de evento e solicite orçamento."
+  ogImage={`${CDN}/bandeiras-corporativo-hero-fachada.webp`}
+  canonical="https://eventos.bandeirasempresarial.com.br/"
+  hideWhatsApp={true}
+>
+<Fragment slot="head">
+  <link rel="preload" href="/fonts/Nexa-Heavy.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500;700&display=swap" />
+</Fragment>
+
+<main class="hub">
+  <div class="hub__midia">
+    <img src={`${CDN}/bandeiras-corporativo-hero-fachada.webp`} width="1920" height="1080" alt="" fetchpriority="high" decoding="async" />
+  </div>
+  <div class="hub__conteudo">
+    <img class="hub__logo" src={`${CDN}/bandeiras-corporativo-logo-bandeiras-branco.webp`} width="720" height="107" alt="Bandeiras Empresarial" />
+    <h1 class="hub__titulo">Você procura um espaço para qual tipo de evento?</h1>
+    <span class="filete" aria-hidden="true"></span>
+    <ul class="hub__cards">
+      {paginas.map((p) => (
+        <li class="hub__card">
+          <h2>{p.titulo}</h2>
+          <p>{p.texto}</p>
+          <a class="btn btn--primario" href={p.href}>Solicitar orçamento</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</main>
+<Rodape />
 </Base>
+
+<style>
+  .hub { position: relative; display: grid; min-height: 100svh; padding: max(40px, env(safe-area-inset-top, 0px)) var(--gutter) max(24px, env(safe-area-inset-bottom, 0px)); color: var(--cor-texto-claro); background: var(--cor-grafite); overflow: hidden; isolation: isolate; }
+  .hub__midia { position: absolute; inset: 0; z-index: -1; }
+  .hub__midia img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+  .hub__midia::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,16,14,.7) 0%, rgba(18,16,14,.62) 50%, rgba(18,16,14,.92) 100%); }
+  .hub__conteudo { display: grid; align-content: center; justify-items: center; gap: 28px; width: 100%; max-width: 960px; margin-inline: auto; text-align: center; }
+  .hub__logo { width: clamp(190px, 24vw, 280px); height: auto; }
+  .hub__titulo { font-family: var(--fonte-titulo); font-weight: 900; text-transform: uppercase; font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem); line-height: 1; text-wrap: balance; }
+  .hub__cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; }
+  .hub__card { display: grid; align-content: space-between; justify-items: center; gap: 14px; flex: 0 1 380px; padding: 32px 28px; border: 1.5px solid rgba(246,242,236,.4); background: rgba(18,16,14,.45); backdrop-filter: blur(4px); }
+  .hub__card h2 { font-family: var(--fonte-titulo); font-weight: 900; text-transform: uppercase; font-size: 1.5rem; line-height: 1; }
+  .hub__card p { font-size: .95rem; line-height: 1.5; color: var(--cor-texto-claro-suave); }
+  .hub__card .btn { width: 100%; margin-top: 8px; }
+  .hub__card .btn:hover { background: var(--cor-bone); color: var(--cor-grafite); }
+</style>

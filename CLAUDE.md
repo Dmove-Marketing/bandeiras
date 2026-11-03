@@ -21,7 +21,7 @@ Você está num **clone limpo do template de landing page da Dmove**. Este arqui
 npm install
 npm run dev        # http://localhost:4321
 npm run build      # dist/ estático
-npm run deploy     # build + scp de dist/ para config.deploy.*
+# deploy: push no GitHub → Cloudflare Workers/Pages publica (sem VPS)
 ```
 
 ---
@@ -108,14 +108,15 @@ O container de GTM padrão da Dmove **lê sinais específicos do site**. Se o si
 - **Form:** confira o wiring; só dispare **lead de teste real no n8n com o OK do usuário**.
 - **Tracking:** `npm run test:gtm` — roda o container (`docs/gtm/`) contra o site buildado, sem GTM e sem lead real: todo `form[data-form-id]` e o popup do WhatsApp, checando PII lida, event_id igual ao do webhook, cookies e quais tags disparariam. Tem de terminar em "Tudo certo". Depois, validação no GTM Preview/Tag Assistant (checklist em `docs/gtm/LEIA-ME.md`).
 
-## FASE 7 — Deploy na VPS
+## FASE 7 — Deploy (Cloudflare Workers/Pages, conta do cliente)
 
-1. `config.json > environment: "production"`, `npm run build`.
-2. `ssh root@157.173.197.116 'mkdir -p /var/www/<dominio>'`
-3. `scp -r dist/. root@157.173.197.116:/var/www/<dominio>/` + `chmod -R 755`
-4. **Vhost nginx** (padrão): `root /var/www/<dominio>` + `try_files $uri $uri/ $uri/index.html =404` + cache assets 1y + gzip. Symlink em `sites-enabled`, `nginx -t`, `reload`.
-5. **SSL:** `certbot --nginx -d <dominio> --non-interactive --agree-tos -m michel@dmove.com.br --redirect`.
-6. Verifique: HTTPS 200, HTTP→HTTPS 301, fonte 200, GTM presente.
+Este projeto (Bandeiras) **não usa a VPS**. O repositório `Dmove-Marketing/bandeiras` é ligado ao Cloudflare (Workers & Pages → Import a repository) e cada push na branch de produção publica sozinho.
+
+1. `config.json > environment: "production"`.
+2. Cloudflare: **Build command** `npm run build` · **Output directory** `dist` · variável `NODE_VERSION=22`.
+3. **Custom domain:** `eventos.bandeirasempresarial.com.br` no projeto Cloudflare.
+4. Cache de assets em `public/_headers`; `/cdn-cgi/trace` (IP do lead) funciona nativamente na Cloudflare.
+5. Verifique: HTTPS 200, fonte 200, GTM presente (quando houver).
 
 ---
 

@@ -93,3 +93,8 @@ export function getPreset(name?: string): PresetField[] {
   const key = (name as keyof typeof formPresets) || 'social';
   return formPresets[key] || formPresets.social;
 }
+
+// "Tipo de evento" sem os tipos sociais, para páginas só do funil corporativo (ex.: /bio da Bandeiras).
+// Formulário e popup do WhatsApp da página usam esta mesma lista.
+const tiposSociais = ['Aniversario', 'Aniversario debutante', 'Bodas', 'Casamento', 'Confraternizacao social'];
+export const tipoEventoOptionsCorporativo = tipoEventoOptions.filter((o) => !tiposSociais.includes(o.value));

@@ -1,0 +1,68 @@
+---
+// Formulário padrão Dmove com o visual do design da Bandeiras (.campo / .btn).
+// Campos vêm do preset (form-presets.ts); `tipos` restringe as opções de "Tipo de evento".
+import config from '../../../config.json';
+import { getPreset } from '../../scripts/form-presets';
+
+interface Props {
+  id: string;
+  tipos?: { value: string; label: string }[];
+  botao?: string;
+}
+
+const { id, tipos, botao = 'Solicitar Orçamento' } = Astro.props;
+const form = config.forms['lead-form'];
+const campos = getPreset(form.preset).map((c) =>
+  tipos && c.name === 'tipo_evento' ? { ...c, options: [c.options![0], ...tipos] } : c,
+);
+const autocompletar: Record<string, string> = { nome: 'name', telefone: 'tel', email: 'email', empresa: 'organization' };
+---
+
+<form
+  id={id}
+  class="form-captacao"
+  method="post"
+  novalidate
+  data-form-id={form.id}
+  data-project={config.project_slug}
+  data-submit-url={form.webhooks[0]}
+  data-redirect={form.redirect_on_success}
+>
+  <div style="display:none;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+  {campos.map((c) => {
+    const fid = `${id}-${c.name}`;
+    const obrigatorio = c.required;
+    return (
+      <div class:list={['campo', { 'campo--inteiro': c.full }]}>
+        <label for={fid}>{c.label}{obrigatorio && <span> *</span>}{c.hint && <small> ({c.hint})</small>}</label>
+        {c.type === 'select' ? (
+          <select id={fid} name={c.name} required={obrigatorio}>
+            {c.options!.map((o) => <option value={o.value} disabled={o.disabled} selected={o.selected}>{o.label}</option>)}
+          </select>
+        ) : c.type === 'textarea' ? (
+          <textarea id={fid} name={c.name} rows="4" required={obrigatorio}></textarea>
+        ) : (
+          <input
+            type={c.type}
+            id={fid}
+            name={c.name}
+            placeholder={c.placeholder}
+            required={obrigatorio}
+            autocomplete={autocompletar[c.name]}
+            inputmode={c.name === 'convidados' || c.name === 'data_evento' ? 'numeric' : undefined}
+            min={c.name === 'convidados' ? '1' : undefined}
+            maxlength={c.name === 'data_evento' ? 10 : undefined}
+            data-datepicker={c.datepicker ? '' : undefined}
+          />
+        )}
+      </div>
+    );
+  })}
+  <p class="form-error" style="display:none;grid-column:1 / -1;color:#ef4444;font-size:.9rem;margin:0;"></p>
+  <button class="btn btn--primario form-submit" type="button">{botao}</button>
+</form>
+
+<script>
+  import { initLeadForms } from '../../scripts/lead-form';
+  initLeadForms();
+</script>

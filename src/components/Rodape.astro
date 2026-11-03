@@ -1,0 +1,24 @@
+---
+// Rodapé padrão do projeto: usado em todas as páginas.
+import '../styles/rodape.css';
+
+const CDN = 'https://media.dmove.com.br/clients';
+---
+
+<footer class="rodape" id="rodape">
+  <div class="wrap">
+    <div class="rodape__marca">
+      <img width="720" height="107" src={`${CDN}/bandeiras/photos/bandeiras-corporativo-logo-bandeiras-branco.webp`} alt="Bandeiras Empresarial" loading="lazy" decoding="async" />
+    </div>
+    <div class="rodape__base">
+      <span>© 2026 Bandeiras Empresarial</span>
+      <span>Eventos Corporativos • Votorantim</span>
+    </div>
+    <div class="rodape__dev">
+      <span>Desenvolvido por:</span>
+      <a href="https://dmove.com.br/" target="_blank" rel="noopener" aria-label="Dmove">
+        <img width="2551" height="574" src={`${CDN}/dmove/photos/logo-dmove.webp`} alt="Dmove" loading="lazy" decoding="async" />
+      </a>
+    </div>
+  </div>
+</footer>

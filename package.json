@@ -1,5 +1,5 @@
 {
-  "name": "dmove-astro-template",
+  "name": "bandeiras",
   "type": "module",
   "version": "2.1.0",
   "engines": {
@@ -10,11 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "scaffold": "node scaffold-page.mjs",
-    "extract": "node extract-assets.mjs",
     "compare": "node scripts/compare.mjs",
     "audit": "node scripts/run-lighthouse.mjs",
-    "deploy": "npm run build && node deploy.mjs",
     "test:gtm": "npm run build && node docs/gtm/testar.mjs"
   },
   "dependencies": {
