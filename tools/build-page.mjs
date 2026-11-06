@@ -79,6 +79,7 @@ const pagina = `---
 import Base from '../layouts/Base.astro';
 import LeadForm from '../components/form/LeadForm.astro';
 import Rodape from '../components/Rodape.astro';
+import { tipoEventoOptionsCorporativo } from '../scripts/form-presets';
 import '../styles/bandeiras-base.css';
 import '../styles/eventos-corporativos.css';
 import '../styles/form.css';
@@ -90,6 +91,7 @@ import '../styles/form.css';
   ogImage="${CDN}/photos/bandeiras-corporativo-hero-fachada.webp"
   canonical="https://eventos.bandeirasempresarial.com.br/eventos-corporativos/"
   whatsAppShowEmpresaField={true}
+  whatsAppTipoOptions={tipoEventoOptionsCorporativo}
 >
 <Fragment slot="head">
   <link rel="preload" href="/fonts/Nexa-Heavy.woff2" as="font" type="font/woff2" crossorigin />

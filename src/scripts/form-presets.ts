@@ -74,9 +74,19 @@ const nucleo: PresetField[] = [
   detalhes,
 ];
 
+// "Tipo de evento" sem os tipos sociais: o preset corporativo usa só esta lista.
+// Páginas corporativas passam a mesma lista ao popup do WhatsApp (Base: whatsAppTipoOptions).
+const tiposSociais = ['Aniversario', 'Aniversario debutante', 'Bodas', 'Casamento', 'Confraternizacao social'];
+export const tipoEventoOptionsCorporativo = tipoEventoOptions.filter((o) => !tiposSociais.includes(o.value));
+
+const tipoEventoCorp: PresetField = {
+  ...tipoEvento,
+  options: [tipoEvento.options![0], ...tipoEventoOptionsCorporativo],
+};
+
 export const formPresets: Record<'social' | 'corporativo', PresetField[]> = {
   social: nucleo,
-  corporativo: [empresa, ...nucleo],
+  corporativo: [empresa, ...nucleo.map((c) => (c === tipoEvento ? tipoEventoCorp : c))],
 };
 
 // Mapa de funil (slug) → preset. Corporativos ganham o campo "empresa".
@@ -93,8 +103,3 @@ export function getPreset(name?: string): PresetField[] {
   const key = (name as keyof typeof formPresets) || 'social';
   return formPresets[key] || formPresets.social;
 }
-
-// "Tipo de evento" sem os tipos sociais, para páginas só do funil corporativo (ex.: /bio da Bandeiras).
-// Formulário e popup do WhatsApp da página usam esta mesma lista.
-const tiposSociais = ['Aniversario', 'Aniversario debutante', 'Bodas', 'Casamento', 'Confraternizacao social'];
-export const tipoEventoOptionsCorporativo = tipoEventoOptions.filter((o) => !tiposSociais.includes(o.value));
