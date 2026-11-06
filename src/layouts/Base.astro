@@ -74,6 +74,31 @@ const defaultJsonLd = {
 <html lang="pt-BR" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
+    <!-- Fallback de mídia: se o CDN (media.dmove.com.br) falhar, usa a cópia em /media-fallback/ (mesmo caminho). -->
+    <script is:inline>
+      (function () {
+        var CDN = /^https:\/\/media\.dmove\.com\.br\/(.+)$/;
+        function local(u) { var m = u && u.match(CDN); return m ? '/media-fallback/' + m[1] : ''; }
+        // erro de img/video/source não borbulha: captura na fase de captura, ainda antes do DOM pronto
+        document.addEventListener('error', function (e) {
+          var t = e.target, f;
+          if (!t || t.dataset && t.dataset.fb) return;
+          if (t.tagName === 'IMG' && (f = local(t.currentSrc || t.src))) { t.dataset.fb = '1'; t.removeAttribute('srcset'); t.src = f; }
+          else if (t.tagName === 'VIDEO' && (f = local(t.currentSrc || t.src))) { t.dataset.fb = '1'; t.src = f; t.load(); }
+          else if (t.tagName === 'SOURCE' && (f = local(t.src))) { t.dataset.fb = '1'; t.src = f; var v = t.parentElement; if (v && v.load) v.load(); }
+        }, true);
+        // poster não dispara erro: testa a carga e troca para a cópia local se falhar
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('video[poster]').forEach(function (v) {
+            var f = local(v.getAttribute('poster'));
+            if (!f) return;
+            var i = new Image();
+            i.onerror = function () { v.setAttribute('poster', f); };
+            i.src = v.getAttribute('poster');
+          });
+        });
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="preconnect" href="https://media.dmove.com.br" crossorigin />
