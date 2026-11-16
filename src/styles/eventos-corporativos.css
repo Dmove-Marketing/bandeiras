@@ -132,7 +132,6 @@ html:not(.js) .abas__painel + .abas__painel{margin-top:48px}
 .experiencias__cabeca{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px 24px;align-items:end;margin-bottom:clamp(48px,6vw,80px)}
 .experiencias__cabeca > div:first-child{grid-column:1 / span 7}
 .experiencias__cabeca > div:last-child{grid-column:9 / span 4;display:grid;gap:22px;justify-items:start}
-.scuderia-logo{width:190px;height:auto;opacity:.95}
 .paineis{display:flex;gap:10px;height:min(74vh,700px);min-height:520px}
 .painel{position:relative;flex:1 1 0;min-width:0;overflow:hidden;isolation:isolate;cursor:pointer;transition:flex-grow .8s var(--ease)}
 .painel.is-ativo{flex-grow:2.4}
