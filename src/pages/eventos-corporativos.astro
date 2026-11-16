@@ -1,5 +1,6 @@
 ---
-// Gerado por tools/build-page.mjs a partir do HTML do Claude Design.
+// Gerada por tools/build-page.mjs a partir do HTML do Claude Design e depois editada à mão (Hero, Conceito, Espaços, Experiências, Gastronomia e Galeria).
+// Não rode o build-page.mjs de novo sem antes comparar: ele sobrescreve estes ajustes.
 import Base from '../layouts/Base.astro';
 import LeadForm from '../components/form/LeadForm.astro';
 import Rodape from '../components/Rodape.astro';
@@ -44,8 +45,9 @@ import '../styles/form.css';
   <div class="wrap hero__conteudo">
     <p class="eyebrow eyebrow--claro" data-hero>Eventos Corporativos • Votorantim</p>
     <h1 class="hero__titulo">
-      <span class="linha"><span data-hero-linha>Um ecossistema que conecta</span></span>
-      <span class="linha"><span class="fecho" data-hero-linha>empresas, pessoas e experiências</span></span>
+      <span class="linha"><span data-hero-linha>Um ecossistema de negócios,</span></span>
+      <span class="linha"><span data-hero-linha>eventos e experiências.</span></span>
+      <span class="linha"><span class="fecho" data-hero-linha>Você no topo.</span></span>
     </h1>
     <div class="hero__acao" data-hero>
       <a class="btn btn--primario" href="#contato">Solicite orçamento</a>
@@ -67,10 +69,11 @@ import '../styles/form.css';
   <div class="wrap cabeca-secao">
     <div class="revelar">
       <p class="eyebrow">Conceito 360°</p>
-      <h2 class="titulo">Negócios, tecnologia e experiências <span class="fecho">em um só lugar</span></h2>
+      <h2 class="titulo">Tudo o que seu evento precisa. <span class="fecho">Em um lugar que oferece muito mais.</span></h2>
     </div>
     <div class="revelar" data-atraso="1">
-      <p class="texto">No Bandeiras Empresarial, negócios, tecnologia e automobilismo se encontram em um ecossistema que amplia as possibilidades dos eventos corporativos. Com espaços que podem ser integrados em uma mesma programação e experiências da Scuderia Bandeiras, seu evento pode combinar conteúdo, networking, ativações e dinâmicas que aproximam marcas e pessoas de novas formas.</p>
+      <p class="texto">Um grande evento começa com o espaço certo. Mas ganha outra dimensão quando encontra novas possibilidades. No Bandeiras, diferentes ambientes permitem criar, combinar e transformar cada momento da programação — de grandes apresentações a encontros mais próximos, de ativações de marca a experiências que saem do convencional.</p>
+      <p class="texto">Um só evento. Diferentes formas de surpreender, conectar e gerar negócios.</p>
     </div>
   </div>
   <div class="video" id="video-conceito">
@@ -97,114 +100,105 @@ import '../styles/form.css';
     </div>
     <div class="abas revelar">
       <div class="abas__lista" role="tablist" aria-label="Espaços">
-        <button class="abas__aba" type="button" role="tab" id="aba-escritorios-e-salas-comerciais" aria-controls="escritorios-e-salas-comerciais" aria-selected="true" tabindex="0"><span class="abas__num">01</span><span class="abas__nome">Escritórios e salas comerciais</span></button>
-        <button class="abas__aba" type="button" role="tab" id="aba-salas-de-reuniao" aria-controls="salas-de-reuniao" aria-selected="false" tabindex="-1"><span class="abas__num">02</span><span class="abas__nome">Salas de reunião</span></button>
-        <button class="abas__aba" type="button" role="tab" id="aba-salas-de-treinamento" aria-controls="salas-de-treinamento" aria-selected="false" tabindex="-1"><span class="abas__num">03</span><span class="abas__nome">Salas de treinamento</span></button>
-        <button class="abas__aba" type="button" role="tab" id="aba-salas-privativas" aria-controls="salas-privativas" aria-selected="false" tabindex="-1"><span class="abas__num">04</span><span class="abas__nome">Salas privativas</span></button>
-        <button class="abas__aba" type="button" role="tab" id="aba-auditorio" aria-controls="auditorio" aria-selected="false" tabindex="-1"><span class="abas__num">05</span><span class="abas__nome">Auditório</span></button>
-        <button class="abas__aba" type="button" role="tab" id="aba-coworking" aria-controls="coworking" aria-selected="false" tabindex="-1"><span class="abas__num">06</span><span class="abas__nome">Coworking</span></button>
-        <button class="abas__aba" type="button" role="tab" id="aba-estudio-de-podcast" aria-controls="estudio-de-podcast" aria-selected="false" tabindex="-1"><span class="abas__num">07</span><span class="abas__nome">Estúdio de podcast</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-auditorio" aria-controls="auditorio" aria-selected="true" tabindex="0"><span class="abas__num">01</span><span class="abas__nome">Auditório</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-espaco-motor" aria-controls="espaco-motor" aria-selected="false" tabindex="-1"><span class="abas__num">02</span><span class="abas__nome">Espaço Motor</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-hangar" aria-controls="hangar" aria-selected="false" tabindex="-1"><span class="abas__num">03</span><span class="abas__nome">Hangar</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-espaco-arena" aria-controls="espaco-arena" aria-selected="false" tabindex="-1"><span class="abas__num">04</span><span class="abas__nome">Espaço Arena</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-pista-de-drift" aria-controls="pista-de-drift" aria-selected="false" tabindex="-1"><span class="abas__num">05</span><span class="abas__nome">Pista de Drift</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-salas-de-treinamento" aria-controls="salas-de-treinamento" aria-selected="false" tabindex="-1"><span class="abas__num">06</span><span class="abas__nome">Salas de treinamento</span></button>
+        <button class="abas__aba" type="button" role="tab" id="aba-espaco-wellness" aria-controls="espaco-wellness" aria-selected="false" tabindex="-1"><span class="abas__num">07</span><span class="abas__nome">Espaço Wellness</span></button>
       </div>
-      <div class="abas__painel" role="tabpanel" id="escritorios-e-salas-comerciais" aria-labelledby="aba-escritorios-e-salas-comerciais">
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Escritórios e salas comerciais"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-escritorios-1.webp" alt="Corredor de escritórios com salas de vidro" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+      <div class="abas__painel" role="tabpanel" id="auditorio" aria-labelledby="aba-auditorio">
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Auditório"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-mesas-plateia.webp" alt="Auditório com mesas e plateia voltadas para o palco" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
         <div class="abas__info">
           <p class="abas__contagem">01 / 07</p>
-          <h3 class="abas__titulo">Escritórios e salas comerciais</h3>
-          <p class="abas__texto">Ambientes a partir de 40 m², com flexibilidade para diferentes necessidades profissionais.</p>
-          <div class="abas__miniaturas" style="--colunas:4">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-escritorios-1.webp" alt="Corredor de escritórios com salas de vidro" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-escritorios-2.webp" alt="Corredor central entre salas comerciais" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="2"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-escritorios-3.webp" alt="Salas comerciais com divisórias de vidro jateado" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="3"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-escritorios-4.webp" alt="Escritório com parede de tijolo e mesas de trabalho" loading="lazy" decoding="async"></button>
+          <h3 class="abas__titulo">Auditório</h3>
+          <p class="abas__texto">Capacidade para até 250 pessoas, com painel de LED 4K de 11 metros, som Yamaha, iluminação automatizada e ambiente climatizado.</p>
+          <div class="abas__miniaturas" style="--colunas:3">
+          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-mesas-plateia.webp" alt="Auditório com mesas e plateia voltadas para o palco" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-palco.webp" alt="Palco do auditório com painel de LED" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-painel-led.webp" alt="Painel de LED 4K de 11 metros do auditório" loading="lazy" decoding="async"></button>
           </div>
           <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
         </div>
       </div>
-      <div class="abas__painel" role="tabpanel" id="salas-de-reuniao" aria-labelledby="aba-salas-de-reuniao" hidden>
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Salas de reunião"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-reuniao-1.webp" alt="Sala de reunião com mesa central e parede de vidro" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+      <div class="abas__painel" role="tabpanel" id="espaco-motor" aria-labelledby="aba-espaco-motor" hidden>
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Espaço Motor"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/motor-lounge.webp" alt="Lounge do Espaço Motor" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
         <div class="abas__info">
           <p class="abas__contagem">02 / 07</p>
-          <h3 class="abas__titulo">Salas de reunião</h3>
-          <p class="abas__texto">Salas modernas e equipadas com TVs, privacidade e conforto para reuniões de até 10 pessoas.</p>
+          <h3 class="abas__titulo">Espaço Motor</h3>
+          <p class="abas__texto">Um ambiente temático de automobilismo para encontros corporativos, networking, ativações de marca e experiências.</p>
+          <div class="abas__miniaturas" style="--colunas:3">
+          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/motor-lounge.webp" alt="Lounge do Espaço Motor" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/motor-escritorios.webp" alt="Escritórios do Espaço Motor" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-motor-1.webp" alt="Espaço Motor com carros de corrida expostos sob o pé-direito alto e paredes de tijolo" loading="lazy" decoding="async"></button>
+          </div>
+          <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
+        </div>
+      </div>
+      <div class="abas__painel" role="tabpanel" id="hangar" aria-labelledby="aba-hangar" hidden>
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Hangar"><img width="600" height="600" src="https://media.dmove.com.br/clients/bandeiras/photos/Capa-Eventos-Site-1.webp" alt="Hangar do Bandeiras Empresarial preparado para evento corporativo" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+        <div class="abas__info">
+          <p class="abas__contagem">03 / 07</p>
+          <h3 class="abas__titulo">Hangar</h3>
+          <p class="abas__texto">Um espaço amplo e versátil para eventos corporativos, ideal para convenções, lançamentos, exposições, ativações de marca e grandes encontros empresariais.</p>
+          <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
+        </div>
+      </div>
+      <div class="abas__painel" role="tabpanel" id="espaco-arena" aria-labelledby="aba-espaco-arena" hidden>
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Espaço Arena"><img width="1024" height="632" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-arena-2.webp" alt="Espaço Arena ao entardecer, com degraus iluminados e a torre do Bandeiras ao fundo" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+        <div class="abas__info">
+          <p class="abas__contagem">04 / 07</p>
+          <h3 class="abas__titulo">Espaço Arena</h3>
+          <p class="abas__texto">Com planta livre e versátil, permite explorar feiras, exposições, ativações, lançamentos e confraternizações.</p>
+          <div class="abas__miniaturas" style="--colunas:3">
+          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="632" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-arena-2.webp" alt="Espaço Arena ao entardecer, com degraus iluminados e a torre do Bandeiras ao fundo" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="477" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-arena-1.webp" alt="Vista ampla do Espaço Arena ao pôr do sol" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="684" src="https://media.dmove.com.br/clients/bandeiras/photos/arena-noturna.webp" alt="Espaço Arena à noite" loading="lazy" decoding="async"></button>
+          </div>
+          <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
+        </div>
+      </div>
+      <div class="abas__painel" role="tabpanel" id="pista-de-drift" aria-labelledby="aba-pista-de-drift" hidden>
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Pista de Drift"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/pista-drift-mural.webp" alt="Mural na Pista de Drift" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+        <div class="abas__info">
+          <p class="abas__contagem">05 / 07</p>
+          <h3 class="abas__titulo">Pista de Drift</h3>
+          <p class="abas__texto">Uma área dedicada a experiências automobilísticas, ideal para ações de marca, demonstrações e dinâmicas corporativas.</p>
           <div class="abas__miniaturas" style="--colunas:4">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-reuniao-1.webp" alt="Sala de reunião com mesa central e parede de vidro" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="471" height="276" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-reuniao-2.webp" alt="Sala de reunião com parede de tijolo, mesa e cadeiras verdes" loading="lazy" decoding="async"></button>
+          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/pista-drift-mural.webp" alt="Mural na Pista de Drift" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/pista-drift-marcas.webp" alt="Marcas de pneu na Pista de Drift" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-pista-drift-3.webp" alt="Pista de Drift ao ar livre, com piso de concreto e galpões ao fundo" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="3"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-pista-drift-2.webp" alt="Vista aérea da Pista de Drift com marcas de pneu" loading="lazy" decoding="async"></button>
           </div>
           <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
         </div>
       </div>
       <div class="abas__painel" role="tabpanel" id="salas-de-treinamento" aria-labelledby="aba-salas-de-treinamento" hidden>
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Salas de treinamento"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-1.webp" alt="Sala de treinamento com mesas em fileiras, cadeiras laranja e TV" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Salas de treinamento"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-3.webp" alt="Sala de treinamento em formato U" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
         <div class="abas__info">
-          <p class="abas__contagem">03 / 07</p>
+          <p class="abas__contagem">06 / 07</p>
           <h3 class="abas__titulo">Salas de treinamento</h3>
           <p class="abas__texto">4 salas com diferentes capacidades e layouts adaptáveis, como auditório, escolar, em U ou mesa redonda, equipadas para treinamentos, workshops e encontros corporativos.</p>
           <div class="abas__miniaturas" style="--colunas:4">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-1.webp" alt="Sala de treinamento com mesas em fileiras, cadeiras laranja e TV" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-2.webp" alt="Sala de treinamento montada em formato escolar com parede de tijolo" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-3.webp" alt="Sala de treinamento em formato U" loading="lazy" decoding="async"></button>
+          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-3.webp" alt="Sala de treinamento em formato U" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-1.webp" alt="Sala de treinamento com mesas em fileiras, cadeiras laranja e TV" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-2.webp" alt="Sala de treinamento montada em formato escolar com parede de tijolo" loading="lazy" decoding="async"></button>
           <button class="abas__mini" type="button" data-i="3"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-treinamento-4.webp" alt="Sala de treinamento em formato U vista do fundo" loading="lazy" decoding="async"></button>
           </div>
           <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
         </div>
       </div>
-      <div class="abas__painel" role="tabpanel" id="salas-privativas" aria-labelledby="aba-salas-privativas" hidden>
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Salas privativas"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-privativa-1.webp" alt="Sala privativa com estações de trabalho" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
-        <div class="abas__info">
-          <p class="abas__contagem">04 / 07</p>
-          <h3 class="abas__titulo">Salas privativas</h3>
-          <p class="abas__texto">Salas mobiliadas para até 4 pessoas, ideais para trabalhar com conforto, privacidade e praticidade.</p>
-          <div class="abas__miniaturas" style="--colunas:4">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-privativa-1.webp" alt="Sala privativa com estações de trabalho" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-privativa-2.webp" alt="Sala privativa com mesa dupla e cadeiras ergonômicas" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="2"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-privativa-3.webp" alt="Sala privativa com mesa e armário" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="3"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-sala-privativa-4.webp" alt="Sala privativa com mesa, monitor e banco" loading="lazy" decoding="async"></button>
-          </div>
-          <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
-        </div>
-      </div>
-      <div class="abas__painel" role="tabpanel" id="auditorio" aria-labelledby="aba-auditorio" hidden>
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Auditório"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-painel-led.webp" alt="Auditório com painel de LED aceso e cadeiras em formato plateia" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
-        <div class="abas__info">
-          <p class="abas__contagem">05 / 07</p>
-          <h3 class="abas__titulo">Auditório</h3>
-          <p class="abas__texto">Capacidade para até 250 pessoas, com painel de LED 4K de 11 metros, som Yamaha, iluminação automatizada e ambiente climatizado.</p>
-          <div class="abas__miniaturas" style="--colunas:4">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-painel-led.webp" alt="Auditório com painel de LED aceso e cadeiras em formato plateia" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-palco.webp" alt="Palco do auditório visto do fundo da sala" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="2"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-mesas-plateia.webp" alt="Auditório montado com mesas e cadeiras laranja" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="3"><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-auditorio-infraestrutura.webp" alt="Auditório com paredes de tijolo aparente e iluminação cênica" loading="lazy" decoding="async"></button>
-          </div>
-          <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
-        </div>
-      </div>
-      <div class="abas__painel" role="tabpanel" id="coworking" aria-labelledby="aba-coworking" hidden>
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Coworking"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-coworking-1.webp" alt="Coworking com mesas compartilhadas e estantes de troféus" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
-        <div class="abas__info">
-          <p class="abas__contagem">06 / 07</p>
-          <h3 class="abas__titulo">Coworking</h3>
-          <p class="abas__texto">Um espaço compartilhado para trabalhar, conectar-se a outros profissionais e ter mais flexibilidade na rotina.</p>
-          <div class="abas__miniaturas" style="--colunas:4">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-coworking-1.webp" alt="Coworking com mesas compartilhadas e estantes de troféus" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-coworking-2.webp" alt="Duas pessoas trabalhando em mesa do coworking" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="2"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-coworking-3.webp" alt="Cabine estofada do coworking com notebook" loading="lazy" decoding="async"></button>
-          </div>
-          <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
-        </div>
-      </div>
-      <div class="abas__painel" role="tabpanel" id="estudio-de-podcast" aria-labelledby="aba-estudio-de-podcast" hidden>
-        <button class="abas__foto" type="button" aria-label="Ampliar foto: Estúdio de podcast"><img width="800" height="500" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-1.webp" alt="Bancada do estúdio de podcast com microfones e telão" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
+      <div class="abas__painel" role="tabpanel" id="espaco-wellness" aria-labelledby="aba-espaco-wellness" hidden>
+        <button class="abas__foto" type="button" aria-label="Ampliar foto: Espaço Wellness"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-wellness-2.webp" alt="Gramado à beira do rio com pergolado" loading="lazy" decoding="async"><span class="abas__lupa" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span></button>
         <div class="abas__info">
           <p class="abas__contagem">07 / 07</p>
-          <h3 class="abas__titulo">Estúdio de podcast</h3>
-          <p class="abas__texto">Estúdio profissional com equipamentos completos, acústica planejada e suporte técnico especializado.</p>
-          <div class="abas__miniaturas" style="--colunas:6">
-          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="800" height="500" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-1.webp" alt="Bancada do estúdio de podcast com microfones e telão" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="1"><img width="800" height="500" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-3.webp" alt="Estúdio de podcast com câmeras e softboxes" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="2"><img width="800" height="500" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-4.webp" alt="Mesa de corte e monitores do estúdio de podcast" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="3"><img width="800" height="500" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-5.webp" alt="Estúdio de podcast com equipamentos de iluminação" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="4"><img width="800" height="500" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-6.webp" alt="Monitores da régie do estúdio de podcast" loading="lazy" decoding="async"></button>
-          <button class="abas__mini" type="button" data-i="5"><img width="1403" height="873" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-estudio-podcast-2.webp" alt="Sala de espera do estúdio de podcast com poltronas verdes" loading="lazy" decoding="async"></button>
+          <h3 class="abas__titulo">Espaço Wellness</h3>
+          <p class="abas__texto">Um ambiente dedicado ao bem-estar, ideal para ações corporativas, pausas na programação e atividades que promovem saúde e qualidade de vida durante o evento.</p>
+          <div class="abas__miniaturas" style="--colunas:3">
+          <button class="abas__mini is-ativa" type="button" data-i="0"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-wellness-2.webp" alt="Gramado à beira do rio com pergolado" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="1"><img width="1600" height="889" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-picnic-beira-rio.webp" alt="Área de piquenique à beira do rio, sob as árvores" loading="lazy" decoding="async"></button>
+          <button class="abas__mini" type="button" data-i="2"><img width="720" height="1280" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_828662504_18230203843323844_253735874072052305_n.webp" alt="Espaço Wellness do Bandeiras Empresarial" loading="lazy" decoding="async"></button>
           </div>
           <div class="abas__acao"><a class="btn btn--primario" href="#contato">Agende sua visita</a></div>
         </div>
@@ -281,35 +275,20 @@ import '../styles/form.css';
       </div>
       <div class="revelar" data-atraso="1">
         <img width="1118" height="224" class="scuderia-logo" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-logo-scuderia-bandeiras-branco.webp" alt="Scuderia Bandeiras" loading="lazy" decoding="async">
-        <p class="texto">No Bandeiras Empresarial, você pode integrar experiências da Scuderia Bandeiras à programação do seu evento, com possibilidades que vão de dinâmicas interativas a ativações de marca.</p>
+        <p class="texto">No Bandeiras, o automobilismo não está apenas no cenário. Ele pode fazer parte da programação do seu evento.</p>
+        <p class="texto">O universo da alta performance se transforma em experiências que levam estratégia, liderança, colaboração, precisão e trabalho em equipe para além do discurso.</p>
       </div>
     </div>
-    <div class="paineis">
-      <article class="painel is-ativo revelar" id="espaco-motor" tabindex="0" aria-labelledby="motor-nome">
-        <figure><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-motor-1.webp" alt="Espaço Motor com carros de corrida expostos sob o pé-direito alto e paredes de tijolo" loading="lazy" decoding="async"></figure>
-        <div class="painel__conteudo">
-          <span class="painel__num">01</span>
-          <h3 class="painel__nome" id="motor-nome">Espaço Motor</h3>
-          <p class="painel__texto">Um ambiente temático de automobilismo para encontros corporativos, networking, ativações de marca e experiências.</p>
-        </div>
-      </article>
-      <article class="painel revelar" data-atraso="1" id="espaco-arena" tabindex="0" aria-labelledby="arena-nome">
-        <figure><img width="1024" height="632" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-arena-2.webp" alt="Espaço Arena ao entardecer, com degraus iluminados e a torre do Bandeiras ao fundo" loading="lazy" decoding="async"></figure>
-        <div class="painel__conteudo">
-          <span class="painel__num">02</span>
-          <h3 class="painel__nome" id="arena-nome">Espaço Arena</h3>
-          <p class="painel__texto">Com planta livre e versátil, permite explorar feiras, exposições, ativações, lançamentos e confraternizações.</p>
-        </div>
-      </article>
-      <article class="painel revelar" data-atraso="2" id="pista-de-drift" tabindex="0" aria-labelledby="drift-nome">
-        <figure><img width="1024" height="576" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-pista-drift-3.webp" alt="Pista de Drift ao ar livre, com piso de concreto e galpões ao fundo" loading="lazy" decoding="async"></figure>
-        <div class="painel__conteudo">
-          <span class="painel__num">03</span>
-          <h3 class="painel__nome" id="drift-nome">Pista de Drift</h3>
-          <p class="painel__texto">Uma área dedicada a experiências automobilísticas, ideal para ações de marca, demonstrações e dinâmicas corporativas.</p>
-        </div>
-      </article>
-    </div>
+    <ul class="caixas">
+      <li class="caixa revelar"><span class="caixa__num">01</span><span class="caixa__nome">Pit-Stop Challenge</span></li>
+      <li class="caixa revelar" data-atraso="1"><span class="caixa__num">02</span><span class="caixa__nome">Crazy Kart</span></li>
+      <li class="caixa revelar" data-atraso="2"><span class="caixa__num">03</span><span class="caixa__nome">Kart Challenge</span></li>
+      <li class="caixa revelar"><span class="caixa__num">04</span><span class="caixa__nome">Drift</span></li>
+      <li class="caixa revelar" data-atraso="1"><span class="caixa__num">05</span><span class="caixa__nome">Palestras</span></li>
+      <li class="caixa revelar" data-atraso="2"><span class="caixa__num">06</span><span class="caixa__nome">Experiências com pilotos</span></li>
+      <li class="caixa revelar"><span class="caixa__num">07</span><span class="caixa__nome">Ativações com carros de competição</span></li>
+    </ul>
+    <p class="experiencias__fecho texto texto--grande revelar">De uma ação pontual a uma programação completa de relacionamento ou team building, sua empresa escolhe até onde quer levar a experiência.</p>
     <div class="acao-secao acao-secao--centro revelar">
       <a class="btn btn--primario" href="#contato">Agende sua visita</a>
     </div>
@@ -325,28 +304,61 @@ import '../styles/form.css';
         <h2 class="titulo titulo--2linhas titulo--largo"><span class="titulo__linha">Gastronomia para acompanhar</span> <span class="fecho">sua programação</span></h2>
       </div>
       <div class="revelar" data-atraso="1">
-        <p class="texto texto--2linhas"><span class="texto__linha">Restaurante com vista panorâmica, ambiente climatizado, TV e banheiros, incluindo opções acessíveis.</span> <span class="texto__linha">O cardápio variado combina qualidade e sabor para tornar as refeições no Bandeiras Empresarial ainda mais agradáveis.</span></p>
+        <p class="texto">O Bandeiras Empresarial oferece opções gastronômicas variadas, de refeições completas a cafés, doces e lanches para acompanhar sua programação.</p>
       </div>
     </div>
-  </div>
-  <div class="marquee faixa-fotos">
-    <div class="marquee__trilha">
-      <div class="marquee__grupo">
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-4.webp" alt="Salão do restaurante com mesas de madeira e cadeiras verdes" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-2.webp" alt="Buffet quente do restaurante com cubas de comida" loading="lazy" decoding="async"></figure>
-        <figure><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-1.webp" alt="Fachada de tijolo do restaurante com coqueiros" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-3.webp" alt="Buffet de saladas do restaurante" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-5.webp" alt="Restaurante amplo com balcão de buffet e mesas" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-6.webp" alt="Mesas do restaurante com jardineira de plantas" loading="lazy" decoding="async"></figure>
+    <div class="gastro">
+    <article class="gastro__bloco revelar">
+      <div class="gastro__texto">
+        <span class="gastro__num">01</span>
+        <h3 class="gastro__nome">Restaurante Panapaná</h3>
+        <p class="texto">Restaurante com vista panorâmica, TV, ambientes climatizados e acessíveis. O cardápio variado combina qualidade e sabor para tornar as refeições no Bandeiras Empresarial ainda mais agradáveis.</p>
       </div>
-      <div class="marquee__grupo" aria-hidden="true">
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-4.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-2.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-1.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-3.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-5.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-6.webp" alt="" loading="lazy" decoding="async"></figure>
+      <div class="gastro__fotos" data-n="6">
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Buffet quente do restaurante com cubas de comida"><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-2.webp" alt="Buffet quente do restaurante com cubas de comida" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Salão do restaurante com mesas de madeira e cadeiras verdes"><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-4.webp" alt="Salão do restaurante com mesas de madeira e cadeiras verdes" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Restaurante amplo com balcão de buffet e mesas"><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-5.webp" alt="Restaurante amplo com balcão de buffet e mesas" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Fachada de tijolo do restaurante com coqueiros"><img width="1000" height="667" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-1.webp" alt="Fachada de tijolo do restaurante com coqueiros" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Mesas do restaurante com jardineira de plantas"><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-6.webp" alt="Mesas do restaurante com jardineira de plantas" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Buffet de saladas do restaurante"><img width="1600" height="1067" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-gastronomia-3.webp" alt="Buffet de saladas do restaurante" loading="lazy" decoding="async"></button>
       </div>
+    </article>
+    <article class="gastro__bloco revelar">
+      <div class="gastro__texto">
+        <span class="gastro__num">02</span>
+        <h3 class="gastro__nome">Casa Bauducco</h3>
+        <p class="texto">Um espaço para aproveitar cafés, doces e produtos tradicionais da marca durante a rotina ou nos intervalos do evento.</p>
+      </div>
+      <div class="gastro__fotos" data-n="3">
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Casa Bauducco no Bandeiras Empresarial"><img width="640" height="1136" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_495483522_1173977494471836_3532129222388870722_n.webp" alt="Casa Bauducco no Bandeiras Empresarial" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Cafés e doces da Casa Bauducco"><img width="1440" height="1800" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_488580919_17846889813444890_5809264882453101208_n.webp" alt="Cafés e doces da Casa Bauducco" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Produtos tradicionais da Casa Bauducco"><img width="1080" height="1080" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_486177487_17844803805444890_4083942676299757964_n.webp" alt="Produtos tradicionais da Casa Bauducco" loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="gastro__bloco revelar">
+      <div class="gastro__texto">
+        <span class="gastro__num">03</span>
+        <h3 class="gastro__nome">Café Networking</h3>
+        <p class="texto">Ambiente ideal para pausas para o café, conversas e momentos de interação entre os participantes.</p>
+      </div>
+      <div class="gastro__fotos" data-n="3">
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Café Networking no Bandeiras Empresarial"><img width="1080" height="1350" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_710373017_18059236079714591_7934848976766482679_n.webp" alt="Café Networking no Bandeiras Empresarial" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Pausa para o café no Café Networking"><img width="1080" height="1350" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_720474948_18060084020714591_2172285641139343689_n.webp" alt="Pausa para o café no Café Networking" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Ambiente de interação do Café Networking"><img width="1080" height="1350" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_705567742_18057440393714591_3462758958620316627_n.webp" alt="Ambiente de interação do Café Networking" loading="lazy" decoding="async"></button>
+      </div>
+    </article>
+    <article class="gastro__bloco revelar">
+      <div class="gastro__texto">
+        <span class="gastro__num">04</span>
+        <h3 class="gastro__nome">Oakberry</h3>
+        <p class="texto">Espaço que recebe a Oakberry, oferecendo opções de açaí para uma pausa refrescante durante a programação.</p>
+      </div>
+      <div class="gastro__fotos" data-n="3">
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Alameda coberta com mesas e plantas"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-alameda-2.webp" alt="Alameda coberta com mesas e plantas" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Alameda com lojas, mesas e vasos de palmeira"><img width="1600" height="900" src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-alameda-1.webp" alt="Alameda com lojas, mesas e vasos de palmeira" loading="lazy" decoding="async"></button>
+        <button class="gastro__foto" type="button" aria-label="Ampliar foto: Oakberry no Bandeiras Empresarial"><img width="1080" height="1920" src="https://media.dmove.com.br/clients/bandeiras/photos/SaveClip.App_870165756_18483346462117178_6937509954415994820_n.webp" alt="Oakberry no Bandeiras Empresarial" loading="lazy" decoding="async"></button>
+      </div>
+    </article>
     </div>
   </div>
 </section>
@@ -542,24 +554,14 @@ import '../styles/form.css';
       </div>
       <div class="galeria__linha">
         <button type="button" class="galeria__item" style="--r:0.750" aria-label="Ampliar foto: Encontro corporativo com apresentação em telão"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-evento-6.webp" alt="Encontro corporativo com apresentação em telão" width="639" height="852" loading="lazy" decoding="async"></button>
-        <button type="button" class="galeria__item" style="--r:1.778" aria-label="Ampliar foto: Gramado à beira do rio com pergolado"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-wellness-2.webp" alt="Gramado à beira do rio com pergolado" width="1600" height="900" loading="lazy" decoding="async"></button>
         <button type="button" class="galeria__item" style="--r:0.810" aria-label="Ampliar foto: Salão decorado com tecidos e iluminação colorida"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-evento-4.webp" alt="Salão decorado com tecidos e iluminação colorida" width="1088" height="1344" loading="lazy" decoding="async"></button>
         <button type="button" class="galeria__item" style="--r:1.333" aria-label="Ampliar foto: Galpão da Scuderia Bandeiras com carros de competição"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-scuderia.webp" alt="Galpão da Scuderia Bandeiras com carros de competição" width="1600" height="1200" loading="lazy" decoding="async"></button>
       </div>
       <div class="galeria__linha">
-        <button type="button" class="galeria__item" style="--r:1.800" aria-label="Ampliar foto: Área de piquenique à beira do rio, sob as árvores"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-picnic-beira-rio.webp" alt="Área de piquenique à beira do rio, sob as árvores" width="1600" height="889" loading="lazy" decoding="async"></button>
         <button type="button" class="galeria__item" style="--r:0.750" aria-label="Ampliar foto: Grupo reunido em evento no Bandeiras"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-evento-7.webp" alt="Grupo reunido em evento no Bandeiras" width="639" height="852" loading="lazy" decoding="async"></button>
-        <button type="button" class="galeria__item" style="--r:1.778" aria-label="Ampliar foto: Alameda coberta com mesas e plantas"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-alameda-2.webp" alt="Alameda coberta com mesas e plantas" width="1600" height="900" loading="lazy" decoding="async"></button>
-      </div>
-      <div class="galeria__linha">
         <button type="button" class="galeria__item" style="--r:1.778" aria-label="Ampliar foto: Lounge do Espaço Motor com poltronas brancas e telão"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-motor-2.webp" alt="Lounge do Espaço Motor com poltronas brancas e telão" width="1024" height="576" loading="lazy" decoding="async"></button>
         <button type="button" class="galeria__item" style="--r:0.810" aria-label="Ampliar foto: Ativação com carros de corrida e globos espelhados"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-evento-5.webp" alt="Ativação com carros de corrida e globos espelhados" width="1088" height="1344" loading="lazy" decoding="async"></button>
-        <button type="button" class="galeria__item" style="--r:2.147" aria-label="Ampliar foto: Vista ampla do Espaço Arena ao pôr do sol"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-espaco-arena-1.webp" alt="Vista ampla do Espaço Arena ao pôr do sol" width="1024" height="477" loading="lazy" decoding="async"></button>
-      </div>
-      <div class="galeria__linha">
         <button type="button" class="galeria__item" style="--r:0.810" aria-label="Ampliar foto: Convidadas ao lado de carro clássico em evento"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-evento-3.webp" alt="Convidadas ao lado de carro clássico em evento" width="1088" height="1344" loading="lazy" decoding="async"></button>
-        <button type="button" class="galeria__item" style="--r:1.778" aria-label="Ampliar foto: Vista aérea da Pista de Drift com marcas de pneu"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-pista-drift-2.webp" alt="Vista aérea da Pista de Drift com marcas de pneu" width="1024" height="576" loading="lazy" decoding="async"></button>
-        <button type="button" class="galeria__item galeria__item--destaque" style="--r:1.778" aria-label="Ampliar foto: Alameda com lojas, mesas e vasos de palmeira"><img src="https://media.dmove.com.br/clients/bandeiras/photos/bandeiras-corporativo-galeria-alameda-1.webp" alt="Alameda com lojas, mesas e vasos de palmeira" width="1600" height="900" loading="lazy" decoding="async"></button>
       </div>
     </div>
     <div class="galeria__controle" aria-hidden="true">

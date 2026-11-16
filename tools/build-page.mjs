@@ -1,3 +1,4 @@
+// ATENÇÃO: uso único (conversão inicial). Depois dele, src/pages/eventos-corporativos.astro foi editada à mão; rodar este script de novo sobrescreve os ajustes.
 // Converte o HTML do Claude Design (/eventos-corporativos) em página Astro.
 // Uso: node tools/build-page.mjs "C:\caminho\index.html"
 // Gera: src/styles/bandeiras-base.css, src/styles/eventos-corporativos.css,

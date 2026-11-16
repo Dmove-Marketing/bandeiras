@@ -330,3 +330,41 @@ html:not(.js) .abas__painel + .abas__painel{margin-top:48px}
   .logos .marquee__grupo{flex-wrap:wrap;justify-content:center;row-gap:24px}
   .faixa-fotos{overflow-x:auto}
 }
+
+/* =========================================================================
+   Experiências em caixas · Gastronomia por espaço
+   ========================================================================= */
+.caixas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.caixa{display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:148px;padding:22px;border:1px solid var(--cor-linha-clara);transition:border-color .3s var(--ease),background-color .3s var(--ease)}
+.caixa:last-child{grid-column:span 2}
+.caixa:hover{border-color:var(--cor-terracota-luz);background:rgba(246,242,236,.04)}
+.caixa__num{font-family:var(--fonte-dados);font-size:.74rem;letter-spacing:.14em;color:var(--cor-terracota-luz)}
+.caixa__nome{font-family:var(--fonte-titulo);font-weight:900;text-transform:uppercase;font-size:clamp(1.05rem,.9rem + .6vw,1.35rem);line-height:1.05}
+.experiencias__fecho{max-width:60ch;margin:clamp(40px,5vw,64px) auto 0;text-align:center;text-wrap:balance}
+
+.gastro{display:grid;margin-top:clamp(24px,4vw,48px)}
+.gastro__bloco{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px 24px;align-items:center;padding-block:clamp(36px,5vw,64px);border-top:1px solid var(--cor-linha)}
+.gastro__bloco:last-child{border-bottom:1px solid var(--cor-linha)}
+.gastro__texto{grid-column:1 / span 4;display:grid;gap:16px;justify-items:start}
+.gastro__fotos{grid-column:5 / span 8;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gastro__bloco:nth-child(even) .gastro__texto{grid-column:9 / span 4;grid-row:1}
+.gastro__bloco:nth-child(even) .gastro__fotos{grid-column:1 / span 8;grid-row:1}
+.gastro__num{font-family:var(--fonte-dados);font-size:.74rem;letter-spacing:.14em;color:var(--cor-terracota)}
+.gastro__nome{font-family:var(--fonte-titulo);font-weight:900;text-transform:uppercase;font-size:clamp(1.6rem,1rem + 1.6vw,2.6rem);line-height:1}
+.gastro__foto{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--cor-cinza);cursor:zoom-in}
+.gastro__foto img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gastro__foto:hover img{transform:scale(1.05)}
+
+@media (max-width:899px){
+  .caixas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gastro__bloco{grid-template-columns:minmax(0,1fr)}
+  .gastro__texto,.gastro__fotos,.gastro__bloco:nth-child(even) .gastro__texto,.gastro__bloco:nth-child(even) .gastro__fotos{grid-column:1 / -1;grid-row:auto}
+  .gastro__fotos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scrollbar-width:none}
+  .gastro__fotos::-webkit-scrollbar{display:none}
+  .gastro__foto{flex:0 0 78%;scroll-snap-align:center}
+}
+@media (max-width:519px){
+  .caixas{grid-template-columns:minmax(0,1fr)}
+  .caixa:last-child{grid-column:auto}
+  .caixa{min-height:104px;gap:18px}
+}

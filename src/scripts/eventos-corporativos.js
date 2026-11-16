@@ -156,7 +156,10 @@ window.Lenis = Lenis;
     document.querySelectorAll('.abas__painel').forEach(function (painel) {
       var grande = painel.querySelector('.abas__foto img');
       var minis = Array.prototype.slice.call(painel.querySelectorAll('.abas__mini'));
-      var fotos = minis.map(function (m) { var im = m.querySelector('img'); return { src: im.getAttribute('src'), alt: im.alt }; });
+      /* painel com uma foto só (sem miniaturas): a foto grande é a lista do lightbox */
+      var fotos = minis.length
+        ? minis.map(function (m) { var im = m.querySelector('img'); return { src: im.getAttribute('src'), alt: im.alt }; })
+        : [{ src: grande.getAttribute('src'), alt: grande.alt }];
       var atual = 0;
       minis.forEach(function (m, j) {
         m.addEventListener('click', function () {
@@ -168,6 +171,13 @@ window.Lenis = Lenis;
         });
       });
       painel.querySelector('.abas__foto').addEventListener('click', function () { abrirL(fotos, atual); });
+    });
+
+    /* ---------- Gastronomia: fotos de cada espaço no lightbox ---------- */
+    document.querySelectorAll('.gastro__fotos').forEach(function (grupo) {
+      var botoes = Array.prototype.slice.call(grupo.querySelectorAll('.gastro__foto'));
+      var lista = botoes.map(function (b) { var im = b.querySelector('img'); return { src: im.getAttribute('src'), alt: im.alt }; });
+      botoes.forEach(function (b, i) { b.addEventListener('click', function () { abrirL(lista, i); }); });
     });
 
     /* ---------- Experiências: painel ativo ---------- */
