@@ -5,7 +5,7 @@
   "client": "Bandeiras Empresarial",
   "environment": "production",
   "tracking": {
-    "gtm_id": "",
+    "gtm_id": "GTM-TFDL73CM",
     "enabled": true
   },
   "whatsapp": {
